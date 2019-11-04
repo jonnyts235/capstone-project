@@ -6,7 +6,7 @@ import MovieItem from "../movie-items/movie-item";
 import ApiInTheatres from "../api-stuff/inTheatres";
 import Carousel from "../carousel/carousel";
 import logo from "../images/logo.png";
-import { apiKey } from "../secrets";
+// import { apiKey } from "../secrets";
 
 class Home extends React.Component {
   constructor(props) {
