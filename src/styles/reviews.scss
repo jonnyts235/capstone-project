@@ -1,0 +1,133 @@
+@mixin base-grid() {
+  display: grid;
+}
+.reviews-page {
+  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 87vh;
+  margin-top: 150px;
+
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .form-flex {
+    display: flex;
+    justify-content: flex-start;
+    // align-items: center;
+    flex-direction: column;
+  }
+}
+
+.one-column {
+  @include base-grid();
+  grid-template-columns: 1fr;
+}
+
+.two-column {
+  @include base-grid();
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 10px;
+}
+
+input {
+  font-family: "Roboto Mono", monospace;
+  color: $navyblue;
+  padding: 5px 0px;
+  width: 100%;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px solid $navyblue;
+  background-color: transparent;
+  transition: 0.5s all ease-in-out;
+  font-size: 1.1em;
+  // margin-bottom: 10px;
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $lightnavyblue;
+  }
+}
+
+.form-name {
+  margin-bottom: 10px;
+}
+
+textarea {
+  border: 1px solid $navyblue;
+  font-family: "Roboto Mono", monospace;
+  color: $navyblue;
+  padding: 10px 0px;
+}
+
+select {
+  border: 1px solid $navyblue;
+  font-family: "Roboto Mono", monospace;
+  color: $navyblue;
+
+  option {
+    font-family: "Roboto Mono", monospace;
+    color: $navyblue;
+  }
+}
+
+.review-card {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px 7px black;
+  background-color: $navyblue;
+
+  .name {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
+
+  .rating {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  .movie {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  .comment {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.render-profiles {
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 950px) {
+  .render-profiles {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}

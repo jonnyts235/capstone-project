@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: $lightgray;
+  font-family: "Roboto Mono", monospace;
+  text-decoration: none;
+}
+
+.App h1 {
+  color: mintcream;
+}
+
+.homepage {
+  font-family: "Roboto Mono", monospace;
+  overflow-x: hidden;
+  background-color: $navyblue;
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  height: 100px;
+  width: 100%;
+  background-color: $lightgray;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  border-bottom: $navyblue;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin-left: 25px;
+
+  .logo-text {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    text-decoration: none;
+    margin-right: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    h3 {
+      color: $navyblue;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 800;
+    }
+  }
+}
+
+.right-side {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  // height: 100px;
+  width: 70vw;
+  align-items: center;
+  float: right;
+  // margin-right: 35px;
+  margin-right: 5vw;
+}
+
+.topnav-buttons {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+
+  .top-nav-btns {
+    padding: 15px 50px;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $navyblue;
+  border: none;
+  box-shadow: 0 5px 10px 0 $gray;
+  color: $lightgray;
+
+  &:hover {
+    transition: 1s ease-in-out;
+    background-color: $lightnavyblue;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+#scroll-btn {
+  background-color: $lightgray;
+  color: $navyblue;
+  box-shadow: none;
+
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.movie-space {
+  margin-top: 150px;
+
+  .movie-space-header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    align-items: center;
+  }
+}
+
+.bottom-navbar {
+  // margin-top: 15px;
+  height: 100px;
+  width: 100%;
+  background-color: $lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottomnav-buttons {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.popular-movies-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  height: 100px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.scroll-btn-space {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.movie {
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color: $navyblue;
+  }
+
+  .movie-details {
+    height: 300px;
+    width: 70%;
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    background-color: $lightgray;
+    border: 2px solid $lightnavyblue;
+    margin-bottom: 25px;
+    transition: 0.7s ease-in-out;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: $gray;
+      border: 2px solid $lightnavyblue;
+      cursor: pointer;
+    }
+
+    img {
+      height: 150px;
+    }
+
+    .genres {
+      display: flex;
+      // justify-content: space-between;
+
+      h5 {
+        color: $lightgray;
+      }
+    }
+
+    .rating {
+      margin-bottom: 10px;
+    }
+
+    .one-genre {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .content h4,
+    h3 {
+      color: $navyblue;
+    }
+  }
+
+  .top-level {
+    margin-right: 15px;
+    margin-left: 15px;
+
+    img {
+      border: 2px solid $lightnavyblue;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+  div {
+    width: 25px;
+    height: 3px;
+    background-color: $navyblue;
+    margin: 5px;
+  }
+}
+
+@media (max-width: 950px) {
+  .topnav-buttons {
+    display: none;
+  }
+
+  .topnav-buttons-small {
+    position: absolute;
+    right: 0px;
+    // height: 92vh;
+    top: 8vh;
+    border-radius: 0px 0px 3px 3px;
+    background-color: $lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateY(40px);
+    padding: 10px;
+    // transition: transform 0.5s ease-in;
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+
+  .one-genre {
+    display: none;
+  }
+
+  .right-side {
+    justify-content: flex-end;
+
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  // .topnav-active {
+  //   transform: translateX(0%);
+  // }
+
+  .movie-space-header {
+    text-align: center;
+  }
+
+  .movie-item-overview {
+    display: none;
+  }
+}
