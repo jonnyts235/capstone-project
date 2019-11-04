@@ -15,7 +15,7 @@ export default class MovieItem extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.apiKey}&language=en-US`
       )
       .then(response => {
         // console.log(response.data.genres);
