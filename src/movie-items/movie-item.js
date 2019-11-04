@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { apiKey } from "../secrets";
+// import { apiKey } from "../secrets";
 
 export default class MovieItem extends Component {
   constructor(props) {

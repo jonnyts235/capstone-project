@@ -3,7 +3,7 @@ import React from "react";
 import axios from "axios";
 import "../styles/main.scss";
 import moment from "moment";
-import { apiKey } from "../secrets";
+// import { apiKey } from "../secrets";
 
 const twoWeeksAgo = moment().subtract(14, "days");
 
