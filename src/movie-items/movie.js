@@ -17,7 +17,7 @@ export default class Movie extends Component {
 
   componentDidMount() {
     axios(
-      `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${apiKey}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${process.env.apiKey}&language=en-US`
     ).then(response => {
       console.log(response.data);
       this.setState({

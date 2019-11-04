@@ -28,7 +28,7 @@ class Home extends React.Component {
   componentDidMount() {
     axios
       .get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
       )
       .then(response => {
         this.setState({
