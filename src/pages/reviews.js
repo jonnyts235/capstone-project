@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
@@ -33,13 +32,13 @@ export default class Reviews extends Component {
     });
   };
 
-  handleDeleteClick(review) {
+  handleDeleteClick(id) {
     axios
-      .delete(`https://jts-capstone-api.herokuapp.com/review/${review.id}`)
+      .delete(`https://jts-capstone-api.herokuapp.com/review/${id}`)
       .then(response => {
         this.setState({
           reviews: this.state.reviews.filter(review => {
-            return review.id !== review.id;
+            return review.id !== id;
           })
         });
 
@@ -78,14 +77,16 @@ export default class Reviews extends Component {
     return this.state.reviews.map(review => {
       return (
         <div className="review-card">
-          <button onClick={() => this.handleDeleteClick(review)}>
-            <FontAwesomeIcon icon="trash" />
-            delete
-          </button>
           <h2 className="name">{review.name}</h2>
           <h3 className="movie">{review.movie}</h3>
           <h4 className="rating">Rating: {review.rating}</h4>
           <h3 className="comment">{review.comment}</h3>
+          <button
+            id="delete-btn"
+            onClick={() => this.handleDeleteClick(review.id)}
+          >
+            delete
+          </button>
         </div>
       );
     });
@@ -218,7 +219,7 @@ export default class Reviews extends Component {
           </form>
         </div>
         <div className="render-profiles">{this.renderReviews()}</div>
-        <button id="scroll-btn" onClick={this.handleToTop}>
+        <button id="review-scroll-btn" onClick={this.handleToTop}>
           Back To Top
         </button>
         <div className="bottom-navbar">

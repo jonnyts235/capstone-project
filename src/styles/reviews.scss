@@ -94,6 +94,9 @@ select {
   align-items: center;
   box-shadow: 1px 1px 7px black;
   background-color: $navyblue;
+  // text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 
   .name {
     margin-left: 10px;
@@ -114,6 +117,8 @@ select {
   .comment {
     margin-left: 10px;
     margin-bottom: 5px;
+    width: 100%;
+    height: inherit;
   }
 }
 
@@ -121,6 +126,22 @@ select {
   display: flex;
   margin-bottom: 50px;
   margin-top: 50px;
+}
+
+#delete-btn {
+  background-color: $lightgray;
+  color: $navyblue;
+  margin-top: 25px;
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+
+#review-scroll-btn {
+  background-color: $navyblue;
+  color: $lightgray;
+  margin-top: 25px;
+  box-shadow: none;
+  margin-bottom: 5px;
 }
 
 @media only screen and (max-width: 950px) {
