@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 
@@ -32,6 +33,25 @@ export default class Reviews extends Component {
     });
   };
 
+  handleDeleteClick(review) {
+    axios
+      .delete(`https://jts-capstone-api.herokuapp.com/reviews/${review.id}`, {
+        withCredentials: true
+      })
+      .then(response => {
+        this.setState({
+          blogItems: this.state.blogItems.filter(review => {
+            return review.id !== review.id;
+          })
+        });
+
+        return response.data;
+      })
+      .catch(error => {
+        console.log("delete blog error", error);
+      });
+  }
+
   handleSubmit = event => {
     axios
       .post("https://jts-capstone-api.herokuapp.com/review", {
@@ -60,6 +80,9 @@ export default class Reviews extends Component {
     return this.state.reviews.map(review => {
       return (
         <div className="review-card">
+          <a onClick={() => this.handleDeleteClick(blogItem)}>
+            <FontAwesomeIcon icon="trash" />
+          </a>
           <h2 className="name">{review.name}</h2>
           <h3 className="movie">{review.movie}</h3>
           <h4 className="rating">Rating: {review.rating}</h4>
@@ -152,6 +175,7 @@ export default class Reviews extends Component {
                 <input
                   type="text"
                   name="movie"
+                  required
                   placeholder="Movie"
                   value={this.state.movie}
                   onChange={this.handleChange}
@@ -161,6 +185,7 @@ export default class Reviews extends Component {
                   name="rating"
                   value={this.state.rating}
                   onChange={this.handleChange}
+                  required
                   className="select-element"
                 >
                   <option value="Rating">Rating</option>
