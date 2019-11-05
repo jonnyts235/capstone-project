@@ -78,7 +78,7 @@ export default class Reviews extends Component {
     return this.state.reviews.map(review => {
       return (
         <div className="review-card">
-          <a onClick={() => this.handleDeleteClick(blogItem)}>
+          <a onClick={() => this.handleDeleteClick(review)}>
             <FontAwesomeIcon icon="trash" />
           </a>
           <h2 className="name">{review.name}</h2>
