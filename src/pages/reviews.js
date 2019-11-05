@@ -35,7 +35,7 @@ export default class Reviews extends Component {
 
   handleDeleteClick(review) {
     axios
-      .delete(`https://jts-capstone-api.herokuapp.com/reviews/${review.id}`)
+      .delete(`https://jts-capstone-api.herokuapp.com/review/${review.id}`)
       .then(response => {
         this.setState({
           reviews: this.state.reviews.filter(review => {
