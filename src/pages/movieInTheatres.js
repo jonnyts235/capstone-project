@@ -22,7 +22,7 @@ export default class MovieInTheatres extends Component {
     axios
       .get(
         `https://api.themoviedb.org/3/discover/movie?api_key=${
-          process.env.apiKey
+          process.env.REACT_APP_API_KEY
         }&primary_release_date.gte=2014-09-15&primary_release_date.lte=${twoWeeksAgo
           .format()
           .slice(0, 10)}`

@@ -62,7 +62,7 @@ export default class Reviews extends Component {
         <div className="review-card">
           <h2 className="name">{review.name}</h2>
           <h3 className="movie">{review.movie}</h3>
-          <h4 className="rating">{review.rating}</h4>
+          <h4 className="rating">Rating: {review.rating}</h4>
           <h3 className="comment">{review.comment}</h3>
         </div>
       );
