@@ -142,6 +142,7 @@ export default class Reviews extends Component {
                 <input
                   type="text"
                   name="name"
+                  required
                   placeholder="Name"
                   value={this.state.name}
                   onChange={this.handleChange}
