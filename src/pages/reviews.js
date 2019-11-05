@@ -35,12 +35,10 @@ export default class Reviews extends Component {
 
   handleDeleteClick(review) {
     axios
-      .delete(`https://jts-capstone-api.herokuapp.com/reviews/${review.id}`, {
-        withCredentials: true
-      })
+      .delete(`https://jts-capstone-api.herokuapp.com/reviews/${review.id}`)
       .then(response => {
         this.setState({
-          blogItems: this.state.blogItems.filter(review => {
+          reviews: this.state.reviews.filter(review => {
             return review.id !== review.id;
           })
         });
@@ -48,7 +46,7 @@ export default class Reviews extends Component {
         return response.data;
       })
       .catch(error => {
-        console.log("delete blog error", error);
+        console.log("delete review error", error);
       });
   }
 
