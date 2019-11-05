@@ -80,6 +80,7 @@ export default class Reviews extends Component {
         <div className="review-card">
           <a onClick={() => this.handleDeleteClick(review)}>
             <FontAwesomeIcon icon="trash" />
+            delete
           </a>
           <h2 className="name">{review.name}</h2>
           <h3 className="movie">{review.movie}</h3>
