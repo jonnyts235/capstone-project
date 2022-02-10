@@ -10,7 +10,7 @@
     "google-maps-react": "^2.0.2",
     "javascript-time-ago": "^2.0.3",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-gesture-gallery": "^1.1.0",
